@@ -1,0 +1,52 @@
+{
+  "name": "lerna-watch",
+  "version": "0.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "bin": {
+    "lerna-watch": "./bin/lerna-watch.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "lerna",
+    "watch",
+    "monorepo"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattstyles/lerna-watch.git"
+  },
+  "author": "Matt Styles <matt@personalurban.com>",
+  "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "standard"
+    ]
+  },
+  "standard": {
+    "ignore": [
+      "**/node_modules/**",
+      "**/dist/"
+    ]
+  },
+  "dependencies": {
+    "@lerna/package-graph": "^3.18.5",
+    "@lerna/project": "^3.21.0",
+    "chalk": "^4.1.0",
+    "debug": "^4.1.1",
+    "minimist": "^1.2.5"
+  },
+  "devDependencies": {
+    "ava": "^3.9.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "standard": "^14.3.4"
+  }
+}
