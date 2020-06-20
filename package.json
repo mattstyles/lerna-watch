@@ -41,7 +41,9 @@
     "@lerna/project": "^3.21.0",
     "chalk": "^4.1.0",
     "debug": "^4.1.1",
-    "minimist": "^1.2.5"
+    "errno": "^0.1.7",
+    "minimist": "^1.2.5",
+    "npmlog": "^4.1.2"
   },
   "devDependencies": {
     "ava": "^3.9.0",
