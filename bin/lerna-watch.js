@@ -12,4 +12,7 @@ try {
   })
 } catch (err) {
   // suppress errors in cli mode
+  if (process.env.DEBUG) {
+    console.error(err)
+  }
 }

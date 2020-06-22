@@ -7,7 +7,7 @@
     "lerna-watch": "./bin/lerna-watch.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava --verbose"
   },
   "keywords": [
     "lerna",
@@ -40,6 +40,7 @@
     "@lerna/package-graph": "^3.18.5",
     "@lerna/project": "^3.21.0",
     "chalk": "^4.1.0",
+    "cross-spawn": "^7.0.3",
     "debug": "^4.1.1",
     "errno": "^0.1.7",
     "minimist": "^1.2.5",
