@@ -5,7 +5,8 @@ const { toMap, makeNode } = require('./fixtures')
 
 const {
   createScopeArguments,
-  getTargetLocalDependencies
+  getTargetLocalDependencies,
+  get
 } = require('../lib/utils')
 
 test('Scoped argument string is correctly formatted', t => {
@@ -107,7 +108,6 @@ test('Should remove duplicates', t => {
   )
 })
 
-// @TODO no local deps of target should not throw
 test('Should work with no local dependencies', t => {
   const graph = new Map()
   const target = makeNode('target')
@@ -118,4 +118,21 @@ test('Should work with no local dependencies', t => {
     [],
     'No dependencies, no worries'
   )
+})
+
+test('getOrElse should accept a string path', t => {
+  const expected = 'expected'
+  const orElse = '🕶'
+  const fixture = {
+    foo: {
+      bar: {
+        baz: expected
+      }
+    }
+  }
+  t.is(get('foo.bar.baz', fixture).unwrap(), expected, 'unwraps gets the value')
+  t.is(get('foo.quux', fixture).unwrap(), null, 'null otherwise')
+
+  t.is(get('foo.bar.baz', fixture).orElse(orElse), expected, 'orElse returns the correct value')
+  t.is(get('foo.quux', fixture).orElse(orElse), orElse, 'or else can be used to supply defaults')
 })
