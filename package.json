@@ -6,6 +6,10 @@
   "bin": {
     "lerna-watch": "./bin/lerna-watch.js"
   },
+  "files": [
+    "lib",
+    "bin"
+  ],
   "scripts": {
     "test": "ava --verbose"
   },
@@ -18,8 +22,15 @@
     "type": "git",
     "url": "git+https://github.com/mattstyles/lerna-watch.git"
   },
+  "bugs": {
+    "url": "https://github.com/mattstyles/lerna-watch/issues"
+  },
+  "homepage": "https://github.com/mattstyles/lerna-watch#readme",
   "author": "Matt Styles <matt@personalurban.com>",
   "license": "MIT",
+  "engines": {
+    "node": ">= 10"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -35,6 +46,9 @@
       "**/node_modules/**",
       "**/dist/"
     ]
+  },
+  "peerDependencies": {
+    "lerna": "^3.22"
   },
   "dependencies": {
     "@lerna/package-graph": "^3.18.5",
