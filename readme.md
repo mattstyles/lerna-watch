@@ -103,7 +103,7 @@ To alter the defaults change one or both configuration items within `lerna.json`
 }
 ```
 
-Note that whilst not enforced it is certainly expected that these scripts are long-lived. A `build` script will typically exit when finished, which is not the aim with `lerna-watch` (although the dependency graph it generates _could_ be leveraged to action a different task, such as running tests as described in the next section).
+Note that whilst not enforced it is certainly expected that these scripts are long-lived. A `build` script will typically exit when finished, which is not the aim with `lerna-watch` (although the dependency graph it generates _could_ be leveraged to action a different task).
 
 > We want an environment that provides a fast refresh loop between making coding changes and seeing the output of those changes.
 
@@ -135,7 +135,7 @@ Within the `app->ui->utils` structure used as an example, a change in `utils` wi
 
 This is a drawback that is not easily worked around. Nor is it trivial to add it to `lerna-watch`.
 
-The easiest solution here is likely to run your tests on a slower cadence such as running when you perform a commit (which you likely already do right?) rather than on save. Whilst this cadence is slower to visualise test failures, the trade-off is significantly faster incremental builds, depending on your requirements this is often enough. If your monorepo is large then running **all** your tests on commit may still be prohibitively expensive, in which case you could leverage the dependency graph that `lerna-watch` generates to run tests (`lerna-watch@1.1` will include a `-c` flag which you can use to specify different scripts to run).
+The easiest solution here is likely to run your tests on a slower cadence such as running when you perform a commit (which you likely already do right?) rather than on save. Whilst this cadence is slower to visualise test failures, the trade-off is significantly faster incremental builds, depending on your requirements this is often enough.
 
 ## Programmatic use
 
