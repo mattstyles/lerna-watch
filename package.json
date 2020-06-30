@@ -1,7 +1,7 @@
 {
   "name": "lerna-watch",
   "version": "1.0.0-alpha.2",
-  "description": "",
+  "description": "Evaluates a dependency tree for a given package and executes commands in each package",
   "main": "lib/index.js",
   "bin": {
     "lerna-watch": "./bin/lerna-watch.js"
