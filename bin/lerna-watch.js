@@ -10,7 +10,7 @@ const { watch } = require('../lib')
 const pkg = require('../package.json')
 const man = require('../lib/man')
 
-const targetName = argv._[0]
+const targets = argv._
 
 if (argv.version) {
   console.log(`${pkg.version}`)
@@ -25,7 +25,7 @@ if (argv.help) {
 try {
   watch({
     cwd: process.cwd(),
-    target: targetName
+    targets: targets
   })
 } catch (err) {
   // suppress errors in cli mode
