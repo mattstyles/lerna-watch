@@ -61,7 +61,7 @@
     "npmlog": "^4.1.2"
   },
   "devDependencies": {
-    "ava": "^3.9.0",
+    "ava": "^5.2.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
     "standard": "^14.3.4"
